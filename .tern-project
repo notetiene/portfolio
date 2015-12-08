@@ -1,0 +1,17 @@
+{
+    "libs": [
+        "browser",
+        "jquery"
+    ],
+    "loadEgerly": [
+        "js/*"
+    ],
+    "plugins": {
+        "requirejs": {},
+        "nodejs": {},
+        "doc_comment": {
+            "fullDocs": true
+        }
+    }
+}
+

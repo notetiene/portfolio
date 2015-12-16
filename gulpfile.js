@@ -185,13 +185,6 @@ gulp.task('img-static', function () {
     .pipe(gulp.dest('images/'));
 });
 
-
-// "watch" = Automatically build on file change
-gulp.task('watch', function () {
-  gulp.watch(source + cssdir + '*.scss', ['css']);
-  gulp.watch(source + 'index.html', ['html']);
-});
-
 // ========================================
 // Build tasks
 
@@ -213,6 +206,13 @@ gulp.task('_js', function () {
 
 // ========================================
 // Main tasks
+
+
+// "watch" = Automatically build on file change
+gulp.task('watch', function () {
+  gulp.watch(source + scssdir + '*.scss', ['css']);
+  gulp.watch(source + 'index.html', ['html']);
+});
 
 // Make both tasks
 gulp.task('img', gulpsync.sync(['img-items', 'img-static']));

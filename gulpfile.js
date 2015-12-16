@@ -240,6 +240,7 @@ gulp.task('vendor', function() {
 gulp.task('img-items', function() {
   return gulp.src(source + imagedir + 'items/' + imageExt)
     .pipe(responsive(reponsiveObj))
+    .pipe(imagemin())
     .pipe(gulp.dest(tmp + 'images/'));
 });
 

@@ -1,0 +1,135 @@
+/* main.scss --- Project One of Udacity Dront End Web Developper
+   Commentary: This is the grid based version of project 1 using
+     Bootstrap framework. Flexbox version was not successful, since
+     flexbox is best used with fixed width.
+
+     Q1: Should I use a smaller font-size for the projects' titles?
+
+     FIXME: :target doesn't seem to work when I hover over twins
+      elements. No borders are shown in Firefox.
+
+     FIXME: Chrome doesn't always resize correctly when using
+       adaptative view. Maybe just a Chrome nightly bug.
+
+     FIXME: Since the layout becomes one column when mobile, images
+      become significantly bigger, thus rendering the different
+      sources useless.
+         - Images on mobile should be served smaller
+            NOTE: Why then hdpi images?
+         - Since old browsers should have a slower network, serve them
+            small images. [x] Achievied with img in picture
+
+     TODO: Make images more responsive [x]
+     TODO: Remove redundant properties [o]
+        - Use shorthand properties [o]
+        - Remove unused CSS properties [o]
+   Code:
+*/
+
+@import 'variables';
+@import 'header';
+@import 'works';
+@import 'disabled';
+
+.hahahahahaha {
+  color: #f00;
+  margin: 29px;
+}
+
+// Borders are included when calculating box's size
+* {
+  box-sizing: border-box;
+  color: $default-color;
+  font-family: $default-ff;
+}
+
+// Catch all to not allow these to overflow
+img,
+object,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+// Title for rows
+h2 {
+  color: $h2-color;
+  font-size: $h2-fs;
+  font-weight: $h2-fw;
+  margin-left: $h2-indent;
+  text-align: center;
+}
+
+// Title for works
+h3 {
+  color: $h3-color;
+  font-size: $h3-fs - 10px;
+  text-transform: uppercase;
+}
+
+// By default, it's visible unless it's medium screens+
+.to-top {
+  background-color: $totop-bgc;
+  border: $totop-bw solid $totop-bc;
+  border-radius: $totop-br;
+  bottom: 3vw;
+  box-shadow: $to-top-box-shadow;
+  display: block;
+  height: $totop-size;
+  opacity: .5;
+  position: fixed;
+  right: 4vw;
+  width: $totop-size;
+  z-index: 999999;
+
+  // SVG arrow icon
+  img {
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    width: 65%;
+  }
+}
+
+// Personnal breakpoint for x-small screens
+// Necessary if we want to keep bootstrap
+@media screen and (max-width: 768px) {
+  .items {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 660px;
+  }
+}
+
+// Bigger screens (tablet+)
+@media screen and (min-width: 768px) {
+  #logo {
+    border-width: 9px;
+    font-size: 48px;
+    margin: 1vh 0;
+    padding: 16px;
+  }
+
+  // H1 title
+  .title {
+    font-size: $h1-lg-fs;
+    margin: $h1-lg-margin;
+  }
+
+  h2 {
+    text-align: left;
+  }
+
+  h3 {
+    font-size: $h3-fs;                  // Probably too big, but mockup had bigger this size
+  }
+
+  .to-top {
+    display: none;                // Don't display on big screens
+  }
+  // SVG image
+}
+
+// main.scss ends here

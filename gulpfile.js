@@ -29,6 +29,7 @@ var build    = './dist/';
 var tmp      = build + 'tmp/';
 
 var cssdir   = 'css/';
+var fontdir  = 'fonts/';
 var scssdir  =  './scss/';
 var jsdir    = './js/';
 var vendordir= './vendor/';
@@ -251,6 +252,12 @@ gulp.task('img-static', function () {
     .pipe(gulp.dest(tmp + 'images/'));
 });
 
+// "fonts" = Move font assets
+gulp.task('fonts', function () {
+  return gulp.src(source + scssdir + fontdir + '*')
+    .pipe(gulp.dest(tmp + cssdir + fontdir));
+});
+
 // ========================================
 // Build tasks
 
@@ -283,7 +290,7 @@ gulp.task('watch', function () {
 gulp.task('img', gulpsync.sync(['img-items', 'img-static']));
 
 // "dist" = Make a distribution (build)
-gulp.task('dist', gulpsync.sync(['clean-dist', 'html', 'css', ['js', 'vendor'], 'img', 'critical', 'copyfiles', 'cleanup']));
+gulp.task('dist', gulpsync.sync(['clean-dist', ['html', 'css', 'js', 'vendor', 'fonts', 'img'], 'critical', 'copyfiles', 'cleanup']));
 
 // "build" = Make a simple build without optimizations
 gulp.task('build', gulpsync.sync(['_html', '_sass', '_js', 'vendor']));

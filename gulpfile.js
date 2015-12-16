@@ -118,7 +118,7 @@ var reponsiveObj = {
           suffix: '-lg_2x'
         }
       }]};
-// Allows to add a variable file name
+// Allows to add a variable filename
 reponsiveObj[placeImage] =  [
   {
     width: 1140,

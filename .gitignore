@@ -7,3 +7,4 @@ dist
 src/scss/#*#
 src/scss/.sass-cache/*
 src/scss/*.map
+src/scss/vendor/*

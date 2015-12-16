@@ -20,14 +20,14 @@ jQuery.fn.extend({
     }
 });
 
-// Workaround when loading
+// Don't show "In Progress" when loading
 $('.disabled picture').addClass('visible');
 
 $('.disabled').disableSelection();
-// Disable selection by tab
+// Disable focus by tab on disabled elements
 $('.disabled > a').attr('tabindex', '-1');
 
-// Polyfill for IE9
+// Polyfill for IE9 that remove pointer events on disabled elements
 $(document).ready(function(){
     PointerEventsPolyfill.initialize({});
 });

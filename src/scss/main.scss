@@ -1,28 +1,30 @@
-/* main.scss --- Project One of Udacity Dront End Web Developper
+/* main.scss --- Project One of Udacity Front End Web Developper
    Commentary: This is the grid based version of project 1 using
      Bootstrap framework. Flexbox version was not successful, since
      flexbox is best used with fixed width.
 
      Q1: Should I use a smaller font-size for the projects' titles?
+     OK
 
-     FIXME: :target doesn't seem to work when I hover over twins
+     DONE: :target doesn't seem to work when I hover over twins
       elements. No borders are shown in Firefox.
 
-     FIXME: Chrome doesn't always resize correctly when using
+     DONE: Chrome doesn't always resize correctly when using
        adaptative view. Maybe just a Chrome nightly bug.
 
-     FIXME: Since the layout becomes one column when mobile, images
+     DONE: Since the layout becomes one column when mobile, images
       become significantly bigger, thus rendering the different
       sources useless.
          - Images on mobile should be served smaller
             NOTE: Why then hdpi images?
          - Since old browsers should have a slower network, serve them
-            small images. [x] Achievied with img in picture
+            small images. Achievied with img in picture
 
-     TODO: Make images more responsive [x]
-     TODO: Remove redundant properties [o]
-        - Use shorthand properties [o]
-        - Remove unused CSS properties [o]
+     DONE: Make images more responsive
+     DONE: Remove redundant properties
+        - Use shorthand properties
+     TODO:
+        - Remove unused CSS properties
    Code:
 */
 
@@ -68,7 +70,7 @@ h3 {
   text-transform: uppercase;
 }
 
-// By default, it's visible unless it's medium screens+
+// By default, it's visible unless it's medium+ screens
 .to-top {
   background-color: $totop-bgc;
   border: $totop-bw solid $totop-bc;
@@ -124,7 +126,7 @@ h3 {
   }
 
   h3 {
-    font-size: $h3-fs;                  // Probably too big, but mockup had bigger this size
+    font-size: $h3-fs;
   }
 
   .to-top {

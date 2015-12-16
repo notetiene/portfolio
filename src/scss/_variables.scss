@@ -1,0 +1,105 @@
+/* _variables.scss --- _variables class
+   Commentary:
+
+   Code:
+*/
+
+
+// Colors
+// ========================================================================
+$black:                      #000;
+
+$primary-color:             #7c8b88;
+$secondary-color:           #f8981c;
+$default-color:             $primary-color;
+
+$h1-color:                  #585c4a;
+$h2-color:                  #bcbbbb;
+$h3-color:                  $h1-color;
+$h3-disabled-color:         desaturate(lighten($h3-color, 30%), 100%);
+
+$header-bc:                 $h2-color;
+$desc-color:                $h1-color;
+$desc-disabled-color:       lighten($desc-color, 20%);
+
+$progress-color:            #fff;
+
+
+$shadow-color:              $black;
+$shadow-color-alt:          $secondary-color;
+
+// According to bootstrap
+$body-bgc:                  #fff;
+
+$totop-color:               #fff;
+$totop-bgc:                 #787c7a;
+$totop-bc:                  $h2-color;
+
+// Font-family
+// ========================================================================
+$default-ff:                'Work Sans', sans-serif;
+$logo-ff:                   'Arial Black', 'Arial Bold', Gadget, sans-serif;
+$progress-ff:               "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+
+// Font-size
+// ========================================================================
+$logo-fs:                   26px;
+
+$h1-fs:                     40px;
+$h1-lg-fs:                  62px;
+$h2-fs:                     36px;
+$h3-fs:                     35px;
+
+$sub-h1-fs:                 22px;
+$desc-fs:                   16px;
+$progress-fs:               20px;
+
+// Font-weight
+// ========================================================================
+$h1-fw:                     100;
+$sub-h1-fw:                 normal;
+$h2-fw:                     400;
+$desc-fw:                   100;
+
+// Borders
+// ========================================================================
+$header-bw:                 4px;
+$logo-bw:                   5px;
+$img-border:                1px solid $primary-color;
+
+$totop-bw:                  5px;
+$totop-br:                  10%; // Border-radius
+
+// Dimensions
+// ========================================================================
+$works-sm-w:                330px;
+
+$header-marg:               0 0 18px;
+$logo-margin:               .5em .5em 0 0;
+$logo-padding:              .30em;
+
+$h1-margin:                 0 0 0 10px;
+$h1-lg-margin:              0;
+$sub-h1-marg:               0 0 22px;
+$h2-indent:                 10px;
+
+$totop-size:                70px;
+
+
+$progress-msg:              'In Progress...';
+
+// Fancy stuff (Transition, filters, shadows)
+// ========================================================================
+$a-hover-ts:                0 0 2px $secondary-color;
+$a-focus-ts:                1px 1px 0 $secondary-color;
+$progress-ts:               0 0 3px $shadow-color;
+
+$img-box-shadow:            0 0 2px $shadow-color;
+$img-hover-box-shadow:      0 0 3px 2px $secondary-color;
+$img-focus-box-shadow:      3px 3px 0 $secondary-color;
+$to-top-box-shadow:         inset 0 0 4px $black;
+
+$img-hover-filter:          saturate(120%) brightness(120%);
+$disabled-img-filter:       brightness(80%) grayscale(70%) opacity(70%);
+
+$transition-duration:        .3s;

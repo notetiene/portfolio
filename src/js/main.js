@@ -22,4 +22,4 @@ jQuery.fn.extend({
 
 $('.disabled').disableSelection();
 // Disable selection by tab
-$(".disabled > a").attr("tabindex", "-1");
+$('.disabled > a').attr('tabindex', '-1');

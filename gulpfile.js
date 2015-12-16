@@ -201,7 +201,7 @@ gulp.task('_sass', function() {
 
 gulp.task('_js', function () {
   return gulp.src(source + jsdir + '*.js')
-    .pipe(gulp.dest(tmp + + 'js'));
+    .pipe(gulp.dest(tmp + 'js'));
 });
 
 // ========================================

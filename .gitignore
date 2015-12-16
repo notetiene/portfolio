@@ -4,6 +4,6 @@ dist
 *.*~
 .#*
 #*#
-scss/#*#
-scss/.sass-cache/*
-scss/*.map
+src/scss/#*#
+src/scss/.sass-cache/*
+src/scss/*.map

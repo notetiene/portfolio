@@ -1,0 +1,60 @@
+/* works.scss --- works class
+   Commentary: project container
+
+   Code:
+*/
+
+.works {
+  text-align: center;
+
+  a {
+    display: block;              // Should be as large as works box
+    outline: 0;                  // Disable ugly outline when being on focus
+    text-decoration: none;
+    transition-duration: $transition-duration;    // Transition of text's shadow
+  }
+
+  img {
+    border-bottom: $img-border;
+    border-right: $img-border;
+    box-shadow: $img-box-shadow;
+    height: auto;
+    transition-duration: $transition-duration;
+    width: 100%;
+  }
+
+  a:hover {
+    text-shadow: $a-hover-ts;
+
+    img {
+      box-shadow: $img-hover-box-shadow;
+      filter: $img-hover-filter;
+    }
+  }
+
+  .description {
+    color: $desc-color;
+    font-size: $desc-fs;
+    font-weight: $desc-fw;
+  }
+
+  // When user is selecting a project with keyboard or clicking
+  a:focus {
+    text-shadow: $a-focus-ts;
+
+    img {
+      box-shadow: $img-focus-box-shadow;             // Transition of image's shadow
+    }
+  }
+}
+
+// Necessary if we want to keep bootstrap
+@media screen and (max-width: 620px) {
+  .works {
+    float: none;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0;             // No need since it's alone
+    width: $works-sm-w;
+  }
+}

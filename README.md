@@ -1,6 +1,8 @@
 #Udacity Portfolio
 
 Udacity nanodegree project #1: Portfolio The project #1 of Udacity Front-End Web Developer Nanodegree is a portfolio to be done from a PDF mockup.
+
+[Demo](http://etienne.cc/)
 ##Requirements
 
 * Gulp:

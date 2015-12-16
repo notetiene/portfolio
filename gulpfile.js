@@ -31,6 +31,7 @@ var tmp      = build + 'tmp/';
 var cssdir   = 'css/';
 var scssdir  =  './scss/';
 var jsdir    = './js/';
+var vendordir= './vendor/'
 var imagedir = './images_src/';
 var imageExt = '*.{png,jpg,jpeg,gif,svg}';
 var browserVersions = ['last 2 versions'];
@@ -97,11 +98,18 @@ gulp.task('js', function() {
   return gulp.src(source + jsdir + '*.js')
     .pipe(uglify())
     .pipe(concat('main.js'))
-    .pipe(gulp.dest(tmp + 'js'));
+    .pipe(gulp.dest(tmp + jsdir));
+});
+
+// "vendor" = Copy vendor files to dist
+gulp.task('vendor', function() {
+  return gulp.src(source + jsdir + vendordir + '*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest(tmp + jsdir + vendordir));
 });
 
 // "img" = Optimize images
-gulp.task('img-items', function () {
+gulp.task('img-items', function() {
   return gulp.src(source + imagedir + 'items/' + imageExt)
     .pipe(responsive({
       '*.jpg' :[
@@ -218,9 +226,9 @@ gulp.task('watch', function () {
 gulp.task('img', gulpsync.sync(['img-items', 'img-static']));
 
 // "dist" = Make a distribution (build)
-gulp.task('dist', gulpsync.sync(['clean-dist', 'html', 'css', 'js', 'img', 'critical', 'copyfiles', 'cleanup']));
+gulp.task('dist', gulpsync.sync(['clean-dist', 'html', 'css', ['js', 'vendor'], 'img', 'critical', 'copyfiles', 'cleanup']));
 
 // "build" = Make a simple build without optimizations
-gulp.task('build', gulpsync.sync(['_html', '_sass', '_js']));
+gulp.task('build', gulpsync.sync(['_html', '_sass', '_js', 'vendor']));
 // Default task
 gulp.task('default', ['build']);

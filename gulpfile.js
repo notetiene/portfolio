@@ -34,84 +34,11 @@ var jsdir    = './js/';
 var vendordir= './vendor/';
 var imagedir = './images_src/';
 var imageExt = '*.{png,jpg,jpeg,gif,svg}';
+var placeImage = 'responsive.png';
+
 var browserVersions = ['last 2 versions'];
 
-// "clean" = Clean distribution
-gulp.task('clean-dist', function () {
-  return gulp.src(build, {read: false})
-    .pipe(clean());
-});
-
-gulp.task('copyfiles', function () {
-  return gulp.src(tmp + '**', {base: tmp})
-    .pipe(gulp.dest(build));
-});
-
-gulp.task('cleanup', function () {
-  return gulp.src(tmp, {read: false})
-    .pipe(clean());
-});
-
-// "html" = Copy HTML files
-gulp.task('html', function() {
-  return  gulp.src(source + '*.html')
-    .pipe(htmlclean())
-    .pipe(gulp.dest(tmp));
-});
-
-// "css" = SCSS + autoprefixer + unCSS + minify
-gulp.task('css', function() {
-  return gulp.src(source + scssdir + 'main.scss')
-    .pipe(sass().on('error', sass.logError))
-    // .pipe(uncss({
-    //   html: [tmp + '*.html']}))
-    .pipe(shorthand())
-    .pipe(autoprefixer({ browsers: browserVersions }))
-    .pipe(minify())
-    .pipe(filesize())
-    .pipe(gulp.dest(tmp + cssdir));
-});
-
-// "selectors" = Minify CSS & HTML selectors (obfuscates)
-gulp.task('selectors', function () {
-  return gulp.src([tmp + cssdir + '*.css', tmp + '*.html'])
-    .pipe(gs.run())
-    .pipe(gulp.dest(tmp + cssdir));
-});
-
-// "critical" = critical inline CSS
-gulp.task('critical', function() {
-  return gulp.src(tmp + '*.html', {base: build})
-    .pipe(critical({
-      base: tmp,
-      inline: true,
-      width: 360,
-      height: 640,
-      minify: true
-    }))
-    .pipe(gulp.dest(build));
-  // We don't use HTML after that
-});
-
-// "js" = uglify + concat
-gulp.task('js', function() {
-  return gulp.src(source + jsdir + '*.js')
-    .pipe(uglify())
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest(tmp + jsdir));
-});
-
-// "vendor" = Copy vendor files to dist
-gulp.task('vendor', function() {
-  return gulp.src(source + jsdir + vendordir + '*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest(tmp + jsdir + vendordir));
-});
-
-// "img" = Optimize images
-gulp.task('img-items', function() {
-  return gulp.src(source + imagedir + 'items/' + imageExt)
-    .pipe(responsive({
+var reponsiveObj = {
       '*.jpg' :[
       {
         width: 220,
@@ -190,7 +117,129 @@ gulp.task('img-items', function() {
         rename: {
           suffix: '-lg_2x'
         }
-      }]}))
+      }]};
+// Allows to add a variable file name
+reponsiveObj[placeImage] =  [
+  {
+    width: 1140,
+    height: 394,
+    quality: 40,
+    rename: {
+      suffix: '_lg-1x'
+    }
+  }, {
+    width: 940,
+    height: 325,
+    quality: 40,
+    rename: {
+      suffix: '_md-1x'
+    }
+  }, {
+    width: 720,
+    height: 249,
+    quality: 40,
+    rename: {
+      suffix: '_sm-1x'
+    }
+  }, {
+    width: 700,
+    height: 242,
+    quality: 40,
+    rename: {
+      suffix: '_ph-1x'
+    }
+  }, {
+    width: 590,
+    height: 204,
+    quality: 40,
+    rename: {
+      suffix: '_xs-1x'
+    }
+  }, {
+    width: 1180,
+    height: 408,
+    quality: 40,
+    rename: {
+      suffix: '_xs-2x'
+    }
+  }];
+
+// "clean" = Clean distribution
+gulp.task('clean-dist', function () {
+  return gulp.src(build, {read: false})
+    .pipe(clean());
+});
+
+gulp.task('copyfiles', function () {
+  return gulp.src(tmp + '**', {base: tmp})
+    .pipe(gulp.dest(build));
+});
+
+gulp.task('cleanup', function () {
+  return gulp.src(tmp, {read: false})
+    .pipe(clean());
+});
+
+// "html" = Copy HTML files
+gulp.task('html', function() {
+  return  gulp.src(source + '*.html')
+    .pipe(htmlclean())
+    .pipe(gulp.dest(tmp));
+});
+
+// "css" = SCSS + autoprefixer + unCSS + minify
+gulp.task('css', function() {
+  return gulp.src(source + scssdir + 'main.scss')
+    .pipe(sass().on('error', sass.logError))
+    // .pipe(uncss({
+    //   html: [tmp + '*.html']}))
+    .pipe(shorthand())
+    .pipe(autoprefixer({ browsers: browserVersions }))
+    .pipe(minify())
+    .pipe(filesize())
+    .pipe(gulp.dest(tmp + cssdir));
+});
+
+// "selectors" = Minify CSS & HTML selectors (obfuscates)
+gulp.task('selectors', function () {
+  return gulp.src([tmp + cssdir + '*.css', tmp + '*.html'])
+    .pipe(gs.run())
+    .pipe(gulp.dest(tmp + cssdir));
+});
+
+// "critical" = critical inline CSS
+gulp.task('critical', function() {
+  return gulp.src(tmp + '*.html', {base: build})
+    .pipe(critical({
+      base: tmp,
+      inline: true,
+      width: 360,
+      height: 640,
+      minify: true
+    }))
+    .pipe(gulp.dest(build));
+  // We don't use HTML after that
+});
+
+// "js" = uglify + concat
+gulp.task('js', function() {
+  return gulp.src(source + jsdir + '*.js')
+    .pipe(uglify())
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest(tmp + jsdir));
+});
+
+// "vendor" = Copy vendor files to dist
+gulp.task('vendor', function() {
+  return gulp.src(source + jsdir + vendordir + '*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest(tmp + jsdir + vendordir));
+});
+
+// "img" = Optimize images
+gulp.task('img-items', function() {
+  return gulp.src(source + imagedir + 'items/' + imageExt)
+    .pipe(responsive(reponsiveObj))
     .pipe(gulp.dest(tmp + 'images/'));
 });
 

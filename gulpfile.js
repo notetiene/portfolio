@@ -125,42 +125,42 @@ reponsiveObj[placeImage] =  [
     height: 394,
     quality: 40,
     rename: {
-      suffix: '_lg-1x'
+      suffix: '-lg_1x'
     }
   }, {
     width: 940,
     height: 325,
     quality: 40,
     rename: {
-      suffix: '_md-1x'
+      suffix: '-md_1x'
     }
   }, {
     width: 720,
     height: 249,
     quality: 40,
     rename: {
-      suffix: '_sm-1x'
+      suffix: '-sm_1x'
     }
   }, {
     width: 700,
     height: 242,
     quality: 40,
     rename: {
-      suffix: '_ph-1x'
+      suffix: '-ph_1x'
     }
   }, {
     width: 590,
     height: 204,
     quality: 40,
     rename: {
-      suffix: '_xs-1x'
+      suffix: '-xs_1x'
     }
   }, {
     width: 1180,
     height: 408,
     quality: 40,
     rename: {
-      suffix: '_xs-2x'
+      suffix: '-xs_2x'
     }
   }];
 

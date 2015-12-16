@@ -33,6 +33,13 @@
 
             <main>
                 <picture class="place-img">
+                    <!--[if IE 9]><video style="display: none;"><![endif]-->
+                    <source srcset="images/responsive-xs_1x.png 1x, images/responsive-xs_2x.png 2x" media="(max-width: 619px)">
+                    <source srcset="images/responsive-lg_1x.png" media="(min-width: 1200px)">
+                    <source srcset="images/responsive-md_1x.png" media="(min-width: 992px)">
+                    <source srcset="images/responsive-sm_1x.png" media="(min-width: 768px)">
+                    <source srcset="images/responsive-ph_1x.png" media="(min-width: 620px)">
+                    <!--[if IE 9]></video><![endif]-->
                     <img src="images/responsive.png" alt="Device's screens" />
                 </picture>
 

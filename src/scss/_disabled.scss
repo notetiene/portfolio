@@ -9,7 +9,7 @@
   a:hover,
   a:focus {
     border: 0;
-    box-shadow: unset;
+    box-shadow: none;
     display: block;                  // So that it taked all the space
     pointer-events: none;
     text-shadow: unset;
@@ -30,6 +30,7 @@
     }
 
   }
+
   // Workaround when loading page
   picture.visible::after {
     visibility: visible;

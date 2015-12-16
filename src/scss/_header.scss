@@ -1,0 +1,53 @@
+/* header.scss --- layout for header
+   Commentary:
+    This file contains properties for the header.
+   Code:
+*/
+
+// Horizontal rule made from border
+header {
+  border-bottom: $header-bw solid $header-bc;
+  margin: $header-marg;
+}
+
+// Self-made logo
+#logo {
+  border: $logo-bw solid $secondary-color;
+  border-radius: 50%;              // Circle shape
+  color: $secondary-color;
+  display: inline-block;
+  font-family: $logo-ff;
+  font-size: $logo-fs;
+  margin: $logo-margin;
+  padding: $logo-padding;
+}
+
+// H1 describing the name
+.title {
+  color: $h1-color;
+  font-size: $h1-fs;
+  font-weight: $h1-fw;
+  margin: $h1-margin;
+  text-align: right;
+
+  // According to new HTML5 standard small means of smaller importance
+  small {
+    display: block;
+    font-size: $sub-h1-fs;
+    font-weight: $sub-h1-fw;
+    margin: $sub-h1-marg;
+    text-align: right;
+  }
+}
+
+// Subheader
+.place-img {
+  display: inline-block;
+  max-width: 100%;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+  }
+}

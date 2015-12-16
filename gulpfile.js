@@ -182,7 +182,7 @@ gulp.task('img-items', function () {
 gulp.task('img-static', function () {
   return gulp.src(source + imagedir + 'static/' + imageExt)
     .pipe(imagemin())
-    .pipe(gulp.dest('images/'));
+    .pipe(gulp.dest(tmp + 'images/'));
 });
 
 // ========================================

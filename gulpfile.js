@@ -24,12 +24,12 @@ var filesize = require('gulp-filesize'); // Print file size
 // var changed = require('gulp-changed');
 
 // Paths
-var source   = './';
+var source   = './src/';
 var build    = './dist/';
 var tmp      = build + 'tmp/';
 
-var cssdir   = './css/';
-var scssdir  =  cssdir;
+var cssdir   = 'css/';
+var scssdir  =  './scss/';
 var jsdir    = './js/';
 var imagedir = './images_src/';
 var imageExt = '*.{png,jpg,jpeg,gif,svg}';
@@ -50,7 +50,6 @@ gulp.task('cleanup', function () {
   return gulp.src(tmp + '*', {read: false})
     .pipe(clean());
 });
-
 
 // "html" = Copy HTML files
 gulp.task('html', function() {
@@ -96,7 +95,7 @@ gulp.task('critical', function() {
 gulp.task('js', function() {
   return gulp.src(source + jsdir + '*.js')
     .pipe(uglify())
-    .pipe(concat('global.js'))
+    .pipe(concat('main.js'))
     .pipe(gulp.dest(tmp + 'js'));
 });
 
@@ -176,7 +175,7 @@ gulp.task('img-items', function () {
           suffix: '-lg_2x'
         }
       }]}))
-    .pipe(gulp.dest('images/'));
+    .pipe(gulp.dest(tmp + 'images/'));
 });
 
 // "img" = Optimize images
@@ -193,11 +192,35 @@ gulp.task('watch', function () {
   gulp.watch(source + 'index.html', ['html']);
 });
 
+// ========================================
+// Build tasks
+
+gulp.task('_html', function () {
+  return gulp.src(source + '*.html')
+    .pipe(gulp.dest(tmp));
+});
+// "sass" = SCSS compilation
+gulp.task('_sass', function() {
+  return gulp.src(source + scssdir + 'main.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(tmp + cssdir));
+});
+
+gulp.task('_js', function () {
+  return gulp.src(source + jsdir + '*.js')
+    .pipe(gulp.dest(tmp + + 'js'));
+});
+
+// ========================================
+// Main tasks
+
 // Make both tasks
 gulp.task('img', gulpsync.sync(['img-items', 'img-static']));
 
 // "dist" = Make a distribution (build)
 gulp.task('dist', gulpsync.sync(['cleanup', 'html', 'css', 'js', 'selectors', 'critical', 'img', 'copyfiles']));
 
+// "build" = Make a simple build without optimizations
+gulp.task('build', gulpsync.sync(['_html', '_sass', '_js']));
 // Default task
-gulp.task('default', ['img']);
+gulp.task('default', ['build']);

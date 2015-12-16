@@ -42,12 +42,12 @@ gulp.task('clean-dist', function () {
 });
 
 gulp.task('copyfiles', function () {
-  return gulp.src(tmp + '(**)')
-    .pipe(gulp.dest(build + '$1'));
+  return gulp.src(tmp + '**', {base: tmp})
+    .pipe(gulp.dest(build));
 });
 
 gulp.task('cleanup', function () {
-  return gulp.src(tmp + '*', {read: false})
+  return gulp.src(tmp, {read: false})
     .pipe(clean());
 });
 
@@ -73,22 +73,23 @@ gulp.task('css', function() {
 
 // "selectors" = Minify CSS & HTML selectors (obfuscates)
 gulp.task('selectors', function () {
-  return gulp.src([tmp + cssdir + '*.css', tmp + '*.html'], {base: source})
+  return gulp.src([tmp + cssdir + '*.css', tmp + '*.html'])
     .pipe(gs.run())
-    .pipe(gulp.dest(source));
+    .pipe(gulp.dest(tmp + cssdir));
 });
 
 // "critical" = critical inline CSS
 gulp.task('critical', function() {
-  return gulp.src(tmp + '*.html', {base: source})
+  return gulp.src(tmp + '*.html', {base: build})
     .pipe(critical({
       base: tmp,
       inline: true,
-      width: 1024,
-      height: 800,
+      width: 360,
+      height: 640,
       minify: true
     }))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest(build));
+  // We don't use HTML after that
 });
 
 // "js" = uglify + concat
@@ -207,7 +208,6 @@ gulp.task('_js', function () {
 // ========================================
 // Main tasks
 
-
 // "watch" = Automatically build on file change
 gulp.task('watch', function () {
   gulp.watch(source + scssdir + '*.scss', ['css']);
@@ -218,7 +218,7 @@ gulp.task('watch', function () {
 gulp.task('img', gulpsync.sync(['img-items', 'img-static']));
 
 // "dist" = Make a distribution (build)
-gulp.task('dist', gulpsync.sync(['cleanup', 'html', 'css', 'js', 'selectors', 'critical', 'img', 'copyfiles']));
+gulp.task('dist', gulpsync.sync(['clean-dist', 'html', 'css', 'js', 'img', 'critical', 'copyfiles', 'cleanup']));
 
 // "build" = Make a simple build without optimizations
 gulp.task('build', gulpsync.sync(['_html', '_sass', '_js']));

@@ -20,6 +20,10 @@ jQuery.fn.extend({
     }
 });
 
+// Workaround when loading
+$('.disabled picture').addClass('visible');
+
 $('.disabled').disableSelection();
 // Disable selection by tab
 $('.disabled > a').attr('tabindex', '-1');
+

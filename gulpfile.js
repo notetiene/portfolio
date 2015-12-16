@@ -31,7 +31,7 @@ var tmp      = build + 'tmp/';
 var cssdir   = 'css/';
 var scssdir  =  './scss/';
 var jsdir    = './js/';
-var vendordir= './vendor/'
+var vendordir= './vendor/';
 var imagedir = './images_src/';
 var imageExt = '*.{png,jpg,jpeg,gif,svg}';
 var browserVersions = ['last 2 versions'];
@@ -114,6 +114,13 @@ gulp.task('img-items', function() {
     .pipe(responsive({
       '*.jpg' :[
       {
+        width: 220,
+        height: 147,
+        quality: 40,
+        rename: {
+          suffix: '_small'
+        }
+      }, {
         width: 330,
         height: 220,
         quality: 40,

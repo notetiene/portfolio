@@ -27,3 +27,7 @@ $('.disabled').disableSelection();
 // Disable selection by tab
 $('.disabled > a').attr('tabindex', '-1');
 
+// Polyfill for IE9
+$(document).ready(function(){
+    PointerEventsPolyfill.initialize({});
+});

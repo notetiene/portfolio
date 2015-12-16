@@ -42,12 +42,11 @@ header {
 
 // Subheader
 .place-img {
-  display: inline-block;
-  width: 100%;
+  display: block;
 
   img {
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
+    height: auto;
+    max-width: none;
+    width: 100%;
   }
 }

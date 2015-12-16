@@ -142,8 +142,8 @@ reponsiveObj[placeImage] =  [
       suffix: '-sm_1x'
     }
   }, {
-    width: 700,
-    height: 242,
+    width: 660,
+    height: 228,
     quality: 40,
     rename: {
       suffix: '-ph_1x'

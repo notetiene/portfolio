@@ -1,0 +1,50 @@
+/* disabled.scss --- disabled class
+   Commentary:
+
+   Code:
+*/
+
+.disabled {
+  a,
+  a:hover,
+  a:focus {
+    border: 0;
+    box-shadow: unset;
+    display: block;                  // So that it taked all the space
+    pointer-events: none;
+    text-shadow: unset;
+  }
+
+  picture {
+    &::after {
+      color: $progress-color;
+      content: $progress-msg;
+      font-family: $progress-ff;
+      font-size: $progress-fs;
+      left: 0;
+      position: absolute;
+      text-shadow: $progress-ts;
+      top: 10%;
+      visibility: hidden;
+      width: 100%;
+    }
+
+  }
+  // Workaround when loading page
+  picture.visible::after {
+    visibility: visible;
+  }
+
+  img {
+    filter: $disabled-img-filter;
+  }
+
+  h3 {
+    color: $h3-disabled-color;
+  }
+
+  .description {
+    color: $desc-disabled-color;
+  }
+}
+

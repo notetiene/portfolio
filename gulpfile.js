@@ -282,8 +282,8 @@ gulp.task('_js', function () {
 
 // "watch" = Automatically build on file change
 gulp.task('watch', function () {
-  gulp.watch(source + scssdir + '*.scss', ['css']);
-  gulp.watch(source + 'index.html', ['html']);
+  gulp.watch(source + scssdir + '*.scss', ['_sass']);
+  gulp.watch(source + 'index.html', ['_html']);
 });
 
 // Make both tasks

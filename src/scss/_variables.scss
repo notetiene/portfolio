@@ -20,6 +20,7 @@ $black:                      #000;
 
 $primary-color:             #7c8b88;
 $secondary-color:           #af3730;
+$third-color:               #621611;
 $default-color:             $primary-color;
 
 $h1-color:                  #585c4a;
@@ -35,7 +36,8 @@ $progress-color:            #fff;
 
 
 $shadow-color:              $black;
-$shadow-color-alt:          $secondary-color;
+$shadow-color-alt:          $third-color;
+$shadow-color-alt-2:        $secondary-color;
 
 $body-bgc:                  #eee;
 $page-bgc:                  #fff;
@@ -106,14 +108,14 @@ $progress-msg:              'In Progress...';
 
 // Fancy stuff (Transition, filters, shadows)
 // ========================================================================
-$a-hover-ts:                0 0 2px $secondary-color;
-$a-focus-ts:                1px 1px 0 $secondary-color;
+$a-hover-ts:                0 0 1px $secondary-color;
+$a-focus-ts:                1px 1px 0 $shadow-color-alt;
 $progress-ts:               0 0 3px $shadow-color;
 
 $page-box-shadow:           0 0 ($page-margin-unit - 2px) $h2-color;
 $img-box-shadow:            0 0 2px $shadow-color;
-$img-hover-box-shadow:      0 0 3px 2px $secondary-color;
-$img-focus-box-shadow:      3px 3px 0 $secondary-color;
+$img-hover-box-shadow:      0 0 2px 2px $shadow-color-alt;
+$img-focus-box-shadow:      3px 3px 0 $shadow-color-alt-2;
 $to-top-box-shadow:         inset 0 0 4px $black;
 
 $img-hover-filter:          saturate(120%) brightness(120%);

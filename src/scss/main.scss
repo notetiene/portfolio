@@ -148,4 +148,21 @@ h3 {
   // SVG image
 }
 
+// This section remove the page's border when it overflows
+// ========================================================================
+
+// 1. large devices
+// 2. medium devices
+// 3. small devices
+// x-small & xx-small don't use a border
+@media (min-width: map-get($large-devices, "min")) and (max-width: map-get($large-devices, "min") + $page-bw*2),
+(min-width: map-get($medium-devices, "min")) and (max-width: map-get($medium-devices, "min") + $page-bw*2),
+(min-width: map-get($small-devices, "min")) and (max-width: map-get($small-devices, "min") + $page-bw*2)
+{
+  .page {
+    border-width: 0;
+  }
+}
+
+
 // main.scss ends here

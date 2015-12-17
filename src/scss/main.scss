@@ -161,6 +161,7 @@ h3 {
 {
   .page {
     border-width: 0;
+    box-sizing: border-box;     // Fix: No more horizontal scroll
   }
 }
 

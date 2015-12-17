@@ -293,6 +293,6 @@ gulp.task('img', gulpsync.sync(['img-items', 'img-static']));
 gulp.task('dist', gulpsync.sync(['clean-dist', ['html', 'css', 'js', 'vendor', 'fonts', 'img'], 'critical', 'copyfiles', 'cleanup']));
 
 // "build" = Make a simple build without optimizations
-gulp.task('build', gulpsync.sync(['_html', '_sass', '_js', 'vendor']));
+gulp.task('build', gulpsync.async(['_html', '_sass', '_js', 'fonts', 'vendor']));
 // Default task
 gulp.task('default', ['build']);

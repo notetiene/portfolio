@@ -34,16 +34,21 @@
 @import 'works';
 @import 'disabled';
 
-.hahahahahaha {
-  color: #f00;
-  margin: 29px;
-}
-
 // Borders are included when calculating box's size
 * {
   box-sizing: border-box;
   color: $default-color;
   font-family: $default-ff;
+}
+
+body {
+  background-color: $body-bgc;
+}
+
+.page {
+  background-color: $page-bgc;
+  padding-bottom: $page-padding-unit;
+  padding-top: $page-padding-unit;
 }
 
 // Catch all to not allow these to overflow
@@ -108,6 +113,14 @@ h3 {
 
 // Bigger screens (tablet+)
 @media screen and (min-width: 768px) {
+  .page {
+    border: $page-border;
+    box-shadow: $page-box-shadow;
+    box-sizing: content-box !important;
+    margin-bottom: $page-margin-unit;
+    margin-top: $page-margin-unit;
+}
+
   #logo {
     border-width: 9px;
     font-size: 48px;

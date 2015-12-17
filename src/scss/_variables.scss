@@ -10,7 +10,7 @@
 $black:                      #000;
 
 $primary-color:             #7c8b88;
-$secondary-color:           #f8981c;
+$secondary-color:           #af3730;
 $default-color:             $primary-color;
 
 $h1-color:                  #585c4a;
@@ -28,8 +28,8 @@ $progress-color:            #fff;
 $shadow-color:              $black;
 $shadow-color-alt:          $secondary-color;
 
-// According to bootstrap
-$body-bgc:                  #fff;
+$body-bgc:                  #eee;
+$page-bgc:                  #fff;
 
 $totop-color:               #fff;
 $totop-bgc:                 #787c7a;
@@ -64,6 +64,8 @@ $desc-fw:                   200;
 
 // Borders
 // ========================================================================
+$page-border:               15px solid $page-bgc;
+
 $header-bw:                 4px;
 $logo-bw:                   5px;
 $img-border:                1px solid $primary-color;
@@ -74,6 +76,9 @@ $totop-br:                  10%; // Border-radius
 // Dimensions
 // ========================================================================
 $works-sm-w:                330px;
+
+$page-margin-unit:          20px;
+$page-padding-unit:         15px;
 
 $header-marg:               0 0 18px;
 $logo-margin:               .5em .5em 0 0;
@@ -95,6 +100,7 @@ $a-hover-ts:                0 0 2px $secondary-color;
 $a-focus-ts:                1px 1px 0 $secondary-color;
 $progress-ts:               0 0 3px $shadow-color;
 
+$page-box-shadow:           0 0 ($page-margin-unit - 2px) $h2-color;
 $img-box-shadow:            0 0 2px $shadow-color;
 $img-hover-box-shadow:      0 0 3px 2px $secondary-color;
 $img-focus-box-shadow:      3px 3px 0 $secondary-color;

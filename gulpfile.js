@@ -53,28 +53,28 @@ var reponsiveObj = {
         height: 220,
         quality: 40,
         rename: {
-          suffix: '-xs_1x'
+          suffix: '-xxs_1x'
         }
       }, {
         width: 660,
         height: 440,
         quality: 60,
         rename: {
-          suffix: '-xs_2x'
+          suffix: '-xxs_2x'
         }
       }, {
         width: 300,    // Phablets (personal breakpoint)
         height: 200,
         quality: 60,
         rename: {
-          suffix: '-ph_1x'
+          suffix: '-xs_1x'
         }
       }, {
         width: 600,
         height: 400,
         quality: 75,
         rename: {
-          suffix: '-ph_2x'
+          suffix: '-xs_2x'
         }
       }, {
         width: 345,
@@ -147,21 +147,21 @@ reponsiveObj[placeImage] =  [
     height: 228,
     quality: 40,
     rename: {
-      suffix: '-ph_1x'
+      suffix: '-xs_1x'
     }
   }, {
     width: 590,
     height: 204,
     quality: 40,
     rename: {
-      suffix: '-xs_1x'
+      suffix: '-xxs_1x'
     }
   }, {
     width: 1180,
     height: 408,
     quality: 40,
     rename: {
-      suffix: '-xs_2x'
+      suffix: '-xxs_2x'
     }
   }];
 

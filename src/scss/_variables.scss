@@ -6,11 +6,13 @@
 
 // Breakpoints
 // ========================================================================
+// These are breakpoint sizes. Min contains the minimum value
+// inclusive. Max contains the maximum value exclusive.
 $xx-small-devices:          (max: 620px);
 $extra-small-devices:       (min: 620px, max: 768px);
 $small-devices:             (min: 768px, max: 992px);
 $medium-devices:            (min: 992px, max: 1200px);
-$medium-devices:            (min: 1200px);
+$large-devices:             (min: 1200px);
 
 // Colors
 // ========================================================================
@@ -71,7 +73,8 @@ $desc-fw:                   200;
 
 // Borders
 // ========================================================================
-$page-border:               15px solid $page-bgc;
+$page-bw:                   15px;
+$page-border:               $page-bw solid $page-bgc;
 
 $header-bw:                 4px;
 $logo-bw:                   5px;

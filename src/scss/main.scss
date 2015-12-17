@@ -47,10 +47,6 @@ body {
 
 .page {
   background-color: $page-bgc;
-  // FIX: Since bootstrap uses border-box, but has no border, we can
-  // use padding-box & nothing will change in its content size if we
-  // have borders or not. Changing it will just bug things
-  box-sizing: padding-box;
   padding-bottom: $page-padding-unit;
   padding-top: $page-padding-unit;
 }
@@ -85,7 +81,7 @@ h3 {
   border: $totop-bw solid $totop-bc;
   border-radius: $totop-br;
   bottom: 3vw;
-  box-shadow: $to-top-box-shadow;
+  box-shadow: $totop-box-shadow;
   display: block;
   height: $totop-size;
   opacity: .5;
@@ -95,13 +91,13 @@ h3 {
   z-index: 999999;
 
   // SVG arrow icon
-  img {
+  svg {
     display: block;
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20%;
-    width: 65%;
+    margin-top: 10%;
+    width: .65 * $totop-size;
   }
 }
 
@@ -120,6 +116,7 @@ h3 {
   .page {
     border: $page-border;
     box-shadow: $page-box-shadow;
+    box-sizing: content-box;
     margin-bottom: $page-margin-unit;
     margin-top: $page-margin-unit;
 }
@@ -158,12 +155,13 @@ h3 {
 // 2. medium devices
 // 3. small devices
 // x-small & xx-small don't use a border
-@media (min-width: map-get($large-devices, "min")) and (max-width: map-get($large-devices, "min") - 1 + $page-bw*2),
-(min-width: map-get($medium-devices, "min")) and (max-width: map-get($medium-devices, "min") - 1 + $page-bw*2),
-(min-width: map-get($small-devices, "min")) and (max-width: map-get($small-devices, "min") - 1 + $page-bw*2)
+@media (min-width: map-get($large-devices, "min")) and (max-width: map-get($large-devices, "min") - 1 + $container-padding + $page-bw*2),
+(min-width: map-get($medium-devices, "min")) and (max-width: map-get($medium-devices, "min") - 1 + $container-padding + $page-bw*2),
+(min-width: map-get($small-devices, "min")) and (max-width: map-get($small-devices, "min") - 1 + $container-padding + $page-bw*2)
 {
   .page {
     border-width: 0;
+    box-sizing: border-box;
   }
 }
 

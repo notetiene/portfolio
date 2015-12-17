@@ -87,6 +87,9 @@ $totop-br:                  10%; // Border-radius
 
 // Dimensions
 // ========================================================================
+// From bootstrap
+$container-padding:         15px * 2;
+
 $works-sm-w:                330px;
 
 $page-margin-unit:          20px;
@@ -116,7 +119,7 @@ $page-box-shadow:           0 0 ($page-margin-unit - 2px) $h2-color;
 $img-box-shadow:            0 0 2px $shadow-color;
 $img-hover-box-shadow:      0 0 2px 2px $shadow-color-alt;
 $img-focus-box-shadow:      3px 3px 0 $shadow-color-alt-2;
-$to-top-box-shadow:         inset 0 0 4px $black;
+$totop-box-shadow:         inset 0 0 4px $black;
 
 $img-hover-filter:          saturate(120%) brightness(120%);
 $disabled-img-filter:       brightness(80%) grayscale(70%) opacity(70%);

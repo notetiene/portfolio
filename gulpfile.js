@@ -245,6 +245,7 @@ gulp.task('img-items', function() {
     .pipe(gulp.dest(tmp + 'images/'));
 });
 
+// Disabled now since no more files
 // "img" = Optimize images
 gulp.task('img-static', function () {
   return gulp.src(source + imagedir + 'static/' + imageExt)
@@ -287,7 +288,7 @@ gulp.task('watch', function () {
 });
 
 // Make both tasks
-gulp.task('img', gulpsync.sync(['img-items', 'img-static']));
+gulp.task('img', gulpsync.sync(['img-items']));
 
 // "dist" = Make a distribution (build)
 gulp.task('dist', gulpsync.sync(['clean-dist', ['html', 'css', 'js', 'vendor', 'fonts', 'img'], 'critical', 'copyfiles', 'cleanup']));

@@ -85,7 +85,7 @@ h3 {
   box-shadow: $totop-box-shadow;
   display: block;
   height: $totop-size;
-  opacity: .5;
+  opacity: 0.5;
   position: fixed;
   right: 4vw;
   width: $totop-size;
@@ -98,7 +98,7 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
-    width: .65 * $totop-size;
+    width: 0.65 * $totop-size;
   }
 }
 

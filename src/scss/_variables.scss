@@ -96,8 +96,8 @@ $page-margin-unit:          20px;
 $page-padding-unit:         15px;
 
 $header-marg:               0 0 18px;
-$logo-margin:               .5em .5em 0 0;
-$logo-padding:              .30em;
+$logo-margin:               0.5em 0.5em 0 0;
+$logo-padding:              0.30em;
 
 $h1-margin:                 0 0 0 10px;
 $h1-lg-margin:              0;
@@ -124,6 +124,6 @@ $totop-box-shadow:         inset 0 0 4px $black;
 $img-hover-filter:          saturate(120%) brightness(120%);
 $disabled-img-filter:       brightness(80%) grayscale(70%) opacity(70%);
 
-$transition-duration:        .3s;
+$transition-duration:        0.3s;
 
 /*! variables.scss ends here */

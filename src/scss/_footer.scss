@@ -1,0 +1,30 @@
+/* header.scss --- layout for header
+   Commentary:
+    This file contains properties for the header.
+   Code:
+*/
+
+footer {
+  padding: 1em 0;
+}
+
+.social {
+  text-align: center;
+  list-style: none;
+}
+
+.social-item {
+  display: inline;
+  margin-right: 1em;
+
+  /*! Social icons */
+  i {
+    padding-right: .15em;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+/* header.scss ends here */

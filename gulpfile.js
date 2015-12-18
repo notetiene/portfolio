@@ -270,6 +270,8 @@ gulp.task('_html', function () {
 gulp.task('_sass', function() {
   return gulp.src(source + scssdir + 'main.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(shorthand())
+    .pipe(autoprefixer({ browsers: "last 8 versions" }))
     .pipe(gulp.dest(tmp + cssdir));
 });
 

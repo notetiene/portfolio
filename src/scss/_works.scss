@@ -8,10 +8,10 @@
   text-align: center;
 
   a {
-    display: block;              // Should be as large as works box
-    outline: 0;                  // Disable ugly outline when being on focus
+    display: block;              /*!  Should be as large as works box */
+    outline: 0;                  /*!  Disable ugly outline when being on focus */
     text-decoration: none;
-    transition-duration: $transition-duration;    // Transition of text's shadow
+    transition-duration: $transition-duration;    /*!  Transition of text's shadow */
   }
 
   img {
@@ -38,24 +38,26 @@
     font-weight: $desc-fw;
   }
 
-  // When user is selecting a project with keyboard or clicking
+  /*!  When user is selecting a project with keyboard or clicking */
   a:focus {
     text-shadow: $a-focus-ts;
 
     img {
-      box-shadow: $img-focus-box-shadow;             // Transition of image's shadow
+      box-shadow: $img-focus-box-shadow;             /*!  Transition of image's shadow */
     }
   }
 }
 
-// Necessary if we want to keep bootstrap
-// That is xx-small
+/*!  Necessary if we want to keep bootstrap */
+/*!  That is xx-small */
 @media screen and (max-width: 620px) {
   .works {
     float: none;
     margin: 0 auto;
     max-width: 100%;
-    padding: 0;             // No need since it's alone
+    padding: 0;             /*!  No need since it's alone */
     width: $works-sm-w;
   }
 }
+
+/*! works.scss ends here */

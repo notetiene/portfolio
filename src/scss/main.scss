@@ -34,7 +34,7 @@
 @import 'works';
 @import 'disabled';
 
-// Borders are included when calculating box's size
+/*!  Borders are included when calculating box's size */
 * {
   box-sizing: border-box;
   color: $default-color;
@@ -51,7 +51,7 @@ body {
   padding-top: $page-padding-unit;
 }
 
-// Catch all to not allow these to overflow
+/*!  Catch all to not allow these to overflow */
 img,
 object,
 video {
@@ -59,7 +59,7 @@ video {
   max-width: 100%;
 }
 
-// Title for rows
+/*!  Title for rows */
 h2 {
   color: $h2-color;
   font-size: $h2-fs;
@@ -68,14 +68,14 @@ h2 {
   text-align: center;
 }
 
-// Title for works
+/*!  Title for works */
 h3 {
   color: $h3-color;
   font-size: $h3-fs - 10px;
   text-transform: uppercase;
 }
 
-// By default, it's visible unless it's medium+ screens
+/*!  By default, it's visible unless it's medium+ screens */
 .to-top {
   background-color: $totop-bgc;
   border: $totop-bw solid $totop-bc;
@@ -90,7 +90,7 @@ h3 {
   width: $totop-size;
   z-index: 999999;
 
-  // SVG arrow icon
+  /*!  SVG arrow icon */
   svg {
     display: block;
     height: auto;
@@ -101,8 +101,8 @@ h3 {
   }
 }
 
-// Personnal breakpoint for x-small screens
-// Necessary if we want to keep bootstrap
+/*!  Personnal breakpoint for x-small screens */
+/*!  Necessary if we want to keep bootstrap */
 @media screen and (max-width: 768px) {
   .items {
     margin: 0 auto;
@@ -111,7 +111,7 @@ h3 {
   }
 }
 
-// Bigger screens (tablet+)
+/*!  Bigger screens (tablet+) */
 @media screen and (min-width: 768px) {
   .page {
     border: $page-border;
@@ -128,8 +128,8 @@ h3 {
     padding: 16px;
   }
 
-  // H1 title
-  .title {
+  /*!  H1 title */
+  .tpitle {
     font-size: $h1-lg-fs;
     margin: $h1-lg-margin;
   }
@@ -143,18 +143,18 @@ h3 {
   }
 
   .to-top {
-    display: none;                // Don't display on big screens
+    display: none;                /*!  Don't display on big screens */
   }
-  // SVG image
+  /*!  SVG image */
 }
 
-// This section remove the page's border when it overflows
-// ========================================================================
+/*!  This section remove the page's border when it overflows */
+/*!  ======================================================================== */
 
-// 1. large devices
-// 2. medium devices
-// 3. small devices
-// x-small & xx-small don't use a border
+/*!  1. large devices */
+/*!  2. medium devices */
+/*!  3. small devices */
+/*!  x-small & xx-small don't use a border */
 @media (min-width: map-get($large-devices, "min")) and (max-width: map-get($large-devices, "min") - 1 + $container-padding + $page-bw*2),
 (min-width: map-get($medium-devices, "min")) and (max-width: map-get($medium-devices, "min") - 1 + $container-padding + $page-bw*2),
 (min-width: map-get($small-devices, "min")) and (max-width: map-get($small-devices, "min") - 1 + $container-padding + $page-bw*2)
@@ -166,4 +166,4 @@ h3 {
 }
 
 
-// main.scss ends here
+/*!  main.scss ends here */

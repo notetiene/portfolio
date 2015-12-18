@@ -10,7 +10,7 @@
   a:focus {
     border: 0;
     box-shadow: none;
-    display: block;                  // So that it takes all the space
+    display: block;                  /*!  So that it takes all the space */
     pointer-events: none;
     text-shadow: unset;
   }
@@ -31,7 +31,7 @@
 
   }
 
-  // Workaround when loading page
+  /*!  Workaround when loading page */
   picture.visible::after {
     visibility: visible;
   }
@@ -49,3 +49,4 @@
   }
 }
 
+/*! disabled.scss ends here */

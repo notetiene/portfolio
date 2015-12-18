@@ -4,18 +4,18 @@
    Code:
 */
 
-// Breakpoints
-// ========================================================================
-// These are breakpoint sizes. Min contains the minimum value
-// inclusive. Max contains the maximum value exclusive.
+/*!  Breakpoints */
+/*!  ======================================================================== */
+/*!  These are breakpoint sizes. Min contains the minimum value */
+/*!  inclusive. Max contains the maximum value exclusive. */
 $xx-small-devices:          (max: 620px);
 $extra-small-devices:       (min: 620px, max: 768px);
 $small-devices:             (min: 768px, max: 992px);
 $medium-devices:            (min: 992px, max: 1200px);
 $large-devices:             (min: 1200px);
 
-// Colors
-// ========================================================================
+/*!  Colors */
+/*!  ======================================================================== */
 $black:                      #000;
 
 $primary-color:             #7c8b88;
@@ -46,35 +46,35 @@ $totop-color:               #fff;
 $totop-bgc:                 #787c7a;
 $totop-bc:                  $h2-color;
 
-// Font-family
-// ========================================================================
+/*!  Font-family */
+/*!  ======================================================================== */
 $default-ff:                'Work Sans', sans-serif;
 $logo-ff:                   'Arial Black', 'Arial Bold', Gadget, sans-serif;
 $progress-ff:               "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
 
-// Font-size
-// ========================================================================
+/*!  Font-size */
+/*!  ======================================================================== */
 $logo-fs:                   26px;
 
 $h1-fs:                     40px;
 $h1-lg-fs:                  62px;
 $h2-fs:                     36px;
-$h3-fs:                     34px; // Probably too big, but mockup had bigger than this size
+$h3-fs:                     34px; /*!  Probably too big, but mockup had bigger than this size */
 
 
 $sub-h1-fs:                 22px;
 $desc-fs:                   16px;
 $progress-fs:               20px;
 
-// Font-weight
-// ========================================================================
+/*!  Font-weight */
+/*!  ======================================================================== */
 $h1-fw:                     200;
 $sub-h1-fw:                 normal;
 $h2-fw:                     400;
 $desc-fw:                   200;
 
-// Borders
-// ========================================================================
+/*!  Borders */
+/*!  ======================================================================== */
 $page-bw:                   15px;
 $page-border:               $page-bw solid $page-bgc;
 
@@ -83,11 +83,11 @@ $logo-bw:                   5px;
 $img-border:                1px solid $primary-color;
 
 $totop-bw:                  5px;
-$totop-br:                  10%; // Border-radius
+$totop-br:                  10%; /*!  Border-radius */
 
-// Dimensions
-// ========================================================================
-// From bootstrap
+/*!  Dimensions */
+/*!  ======================================================================== */
+/*!  From bootstrap */
 $container-padding:         15px * 2;
 
 $works-sm-w:                330px;
@@ -109,8 +109,8 @@ $totop-size:                70px;
 
 $progress-msg:              'In Progress...';
 
-// Fancy stuff (Transition, filters, shadows)
-// ========================================================================
+/*!  Fancy stuff (Transition, filters, shadows) */
+/*!  ======================================================================== */
 $a-hover-ts:                0 0 1px $secondary-color;
 $a-focus-ts:                1px 1px 0 $shadow-color-alt;
 $progress-ts:               0 0 3px $shadow-color;
@@ -125,3 +125,5 @@ $img-hover-filter:          saturate(120%) brightness(120%);
 $disabled-img-filter:       brightness(80%) grayscale(70%) opacity(70%);
 
 $transition-duration:        .3s;
+
+/*! variables.scss ends here */

@@ -4,16 +4,16 @@
    Code:
 */
 
-// Horizontal rule made from border
+/*!  Horizontal rule made from border */
 header {
   border-bottom: $header-bw solid $header-bc;
   margin: $header-marg;
 }
 
-// Self-made logo
+/*!  Self-made logo */
 #logo {
   border: $logo-bw solid $secondary-color;
-  border-radius: 50%;              // Circle shape
+  border-radius: 50%;              /*!  Circle shape */
   color: $secondary-color;
   display: inline-block;
   font-family: $logo-ff;
@@ -22,7 +22,7 @@ header {
   padding: $logo-padding;
 }
 
-// H1 describing the name
+/*!  H1 describing the name */
 .title {
   color: $h1-color;
   font-size: $h1-fs;
@@ -30,7 +30,7 @@ header {
   margin: $h1-margin;
   text-align: right;
 
-  // According to new HTML5 standard small means of smaller importance
+  /*!  According to new HTML5 standard small means of smaller importance */
   small {
     display: block;
     font-size: $sub-h1-fs;
@@ -40,7 +40,7 @@ header {
   }
 }
 
-// Subheader
+/*!  Subheader */
 .place-img {
   display: block;
 
@@ -50,3 +50,5 @@ header {
     width: 100%;
   }
 }
+
+/*! header.scss ends here */

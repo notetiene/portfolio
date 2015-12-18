@@ -4,17 +4,17 @@
 */
 
 @font-face {
-  font-family: 'Work Sans';
+  font-family: "Work Sans";
   font-style: normal;
   font-weight: 200;
-  src: local('Work Sans Thin'), local('WorkSans-Thin'), url(fonts/work-sans-200.woff2) format('woff2');
+  src: local("Work Sans Thin"), local("WorkSans-Thin"), url(fonts/work-sans-200.woff2) format("woff2");
 }
 
 @font-face {
-  font-family: 'Work Sans';
+  font-family: "Work Sans";
   font-style: normal;
   font-weight: 400;
-  src: local('Work Sans'), local('WorkSans-Regular'), url(fonts/work-sans-400.woff2) format('woff2');
+  src: local("Work Sans"), local("WorkSans-Regular"), url(fonts/work-sans-400.woff2) format("woff2");
 }
 
 /* fonts.scss ends here */

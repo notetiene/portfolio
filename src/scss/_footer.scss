@@ -16,19 +16,28 @@ footer {
   text-align: center;
 }
 
-/*! Individual social icons */
+/*! Individual social media */
 .social-item {
   display: inline;
   margin-right: 1em;
 
-  /*! Social icons */
-  i {
-    padding-right: 0.15em;
+  a {
+    transition-duration: $transition-duration;
   }
+}
 
-  &:last-of-type {
-    margin-right: 0;
-  }
+.social-item a:hover, a:hover .social-icon {
+  color: $secondary-color;
+  text-decoration: none;
+}
+
+.social-icon {
+  padding-right: 0.15em;
+}
+
+.social-icon:last-of-type {
+  margin-right: 0;
+  transition-duration: $transition-duration;
 }
 
 /* header.scss ends here */
